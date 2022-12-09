@@ -1,22 +1,6 @@
-const parseExcel = function (file) {
-  var reader = new FileReader();
-
-  reader.onload = function (e) {
-    var data = e.target.result;
-    var workbook = XLSX.read(data, { type: 'binary' });
-
-    workbook.SheetNames.forEach(function (sheetName) {
-      var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-      var json_object = JSON.stringify(XL_row_object);
-      console.log(json_object);
-    })
-  };
-
-  reader.onerror = function (ex) {
-    console.log(ex);
-  };
-
-  reader.readAsBinaryString(file);
-}
-
-parseExcel('spisak.xlsx')
+var input = document.getElementById('input')
+input.addEventListener('change', function() {
+  readXlsxFile(input.files[0]).then(function(rows) {
+    console.log(rows)
+  })
+})
