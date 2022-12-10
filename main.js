@@ -33,7 +33,10 @@ const zaglavlje =
   "naslov",   // 26
   "god."      // 27
 ]
+
 const sakrij = [3, 5, 6, 7, 11, 15, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+
+/* FILTER & MAP */
 
 const zaglavljeHtml = zaglavlje
   .filter((x, i) => !sakrij.includes(i))
