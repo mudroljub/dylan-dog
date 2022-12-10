@@ -1,8 +1,9 @@
 import svaIzdanja from './data/redovna.json' assert {type: 'json'}
 
-const sakrij = [3, 6, 16, 17, 18]
+const sakrij = [3, 5, 6, 16, 17, 18]
 
 const svaZaglavlja = [
+  "",
   "br.",
   "naziv",
   "god.",
@@ -29,8 +30,8 @@ const izdanja = svaIzdanja.map(izdanje => izdanje.filter((x, i) => !sakrij.inclu
 
 const zaglavljeHtml = zaglavlje.map(th => `<th>${th}</th>`).join('')
 
-const izdanjaHtml = izdanja.map(red => 
-  `<tr>${red.map(td => `<td>${td || ''}</td>`).join('')}</tr>`
+const redoviHtml = izdanja.map((red, i) => 
+  `<tr><td><input type="checkbox" name="${i}"></td>${red.map(td => `<td>${td || ''}</td>`).join('')}</tr>`
 ).join('')
 
 document.body.innerHTML = `
@@ -38,6 +39,6 @@ document.body.innerHTML = `
   <tr>
     ${zaglavljeHtml}
   </tr>
-  ${izdanjaHtml}
+  ${redoviHtml}
 </table>
 `
