@@ -1,6 +1,8 @@
-import izdanja from './data/redovna.json' assert {type: 'json'}
+import svaIzdanja from './data/redovna.json' assert {type: 'json'}
 
-const zaglavlje = [
+const sakrij = [3, 6, 16, 17, 18]
+
+const svaZaglavlja = [
   "br.",
   "ORIGINALNI NAZIV",
   "GODINA",
@@ -8,34 +10,28 @@ const zaglavlje = [
   "SCENARIO",
   "CRTEŽ",
   "NASLOVNA",
-  "EDICIJA",
-  "br.",
+  "Dnevnik",
   "NAZIV",
   "GODINA",
-  "EDICIJA",
-  "br.",
+  "Slobodna Dalmacija / Ludens",
   "NAZIV",
   "GODINA",
-  "EDICIJA",
-  "br.",
+  "Veseli četvrtak",
   "NAZIV",
   "GODINA",
-  "EDICIJA",
-  "br.",
+  "Libellus",
   "NAZIV",
   "GODINA",
 ]
 
-// izdanja.forEach(red => red.pop())
-console.log(izdanja)
+const zaglavlje = svaZaglavlja.filter((x, i) => !sakrij.includes(i))
+const izdanja = svaIzdanja.map(izdanje => izdanje.filter((x, i) => !sakrij.includes(i)))
 
 const zaglavljeHtml = zaglavlje.map(th => `<th>${th}</th>`).join('')
 
-const izdanjaHtml = izdanja.map(red => {
-  const redHtml = red.map(td => `<td>${td}</td>`).join('')
-  return `<tr>${redHtml}</tr>`
-}).join('')
-
+const izdanjaHtml = izdanja.map(red => 
+  `<tr>${red.map(td => `<td>${td}</td>`).join('')}</tr>`
+).join('')
 
 document.body.innerHTML = `
 <table>
