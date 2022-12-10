@@ -9,7 +9,6 @@ console.log(res)
 
 const zaglavlje = 
 [
-  "EDICIJA",
   'br.',
   "originalni naslov",
   "godina",
@@ -25,19 +24,7 @@ const zaglavlje =
   "edicija",
   'br.',
   "naslov",
-  "godina",
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null
+  "godina"
 ]
 
 const sakrij = []
