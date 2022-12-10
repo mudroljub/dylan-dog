@@ -2,9 +2,13 @@ import izdanja from './data/specijali.json' assert {type: 'json'}
 
 const specijal = new Set(JSON.parse(localStorage.getItem('specijal')))
 
+const res = izdanja.map(red => {
+  return red
+})
+console.log(res)
+
 const zaglavlje = 
 [
-  "edicija",
   "br.",
   "originalni naziv",
   "godina",
@@ -24,18 +28,10 @@ const zaglavlje =
   "edicija",
   "br.",
   "naziv",
-  "godina",
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null
+  "godina"
 ]
 
-const sakrij = []
+const sakrij = [5, 6, 7]
 
 /* FILTER & MAP */
 
