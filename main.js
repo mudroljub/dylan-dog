@@ -1,6 +1,6 @@
 import izdanja from './data/redovna.json' assert {type: 'json'}
 
-const zaglavlje =   [
+const zaglavlje = [
   "br.",
   "ORIGINALNI NAZIV",
   "GODINA",
@@ -8,30 +8,25 @@ const zaglavlje =   [
   "SCENARIO",
   "CRTEŽ",
   "NASLOVNA",
-  "BOJA",
   "EDICIJA",
-  null,
+  "br.",
   "NAZIV",
   "GODINA",
   "EDICIJA",
-  null,
+  "br.",
   "NAZIV",
   "GODINA",
   "EDICIJA",
-  null,
+  "br.",
   "NAZIV",
   "GODINA",
   "EDICIJA",
-  null,
+  "br.",
   "NAZIV",
   "GODINA",
-  "EDICIJA",
-  null,
-  "NAZIV",
-  "GODINA"
 ]
 
-// izdanja.forEach(red => red.shift())
+// izdanja.forEach(red => red.pop())
 console.log(izdanja)
 
 const zaglavljeHtml = zaglavlje.map(th => `<th>${th}</th>`).join('')
