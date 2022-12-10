@@ -10,10 +10,10 @@ const svaZaglavlja = [
   "scenario", // 4
   "crtež",    // 5
   "naslovna", // 6
-  "Dnevnik<small> / Abaton / ostali</small>", // 7
+  "Dnevnik<small> / ostali</small>", // 7
   "naslov", // 8
   "god.",   // 9 
-  "Ludens<small> / Slobodna dalmacija</small>", // 10
+  "Ludens<small> / Slobodna<br>dalmacija</small>", // 10
   "naslov", // 11
   "god.",   // 12
   "Veseli četvrtak", // 13
@@ -29,8 +29,10 @@ const izdanja = svaIzdanja.map(izdanje => izdanje.filter((x, i) => !sakrij.inclu
 
 const zaglavljeHtml = zaglavlje.map(th => `<th>${th}</th>`).join('')
 
+const renderRed = (td, i) => `<td>${(i == 1 ? `<i>${td}</i>` : td) || ''}</td>`
+
 const redoviHtml = izdanja.map((red, i) => 
-  `<tr><td><input type="checkbox" name="${i}"></td>${red.map(td => `<td>${td || ''}</td>`).join('')}</tr>`
+  `<tr><td><input type="checkbox" name="${i}"></td>${red.map(renderRed).join('')}</tr>`
 ).join('')
 
 document.body.innerHTML = `
