@@ -1,4 +1,4 @@
-import izdanja from './data/super-book.json' assert {type: 'json'}
+import izdanja from '../data/super-book.json' assert {type: 'json'}
 
 const superbook = new Set(JSON.parse(localStorage.getItem('superbook')))
 

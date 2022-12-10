@@ -1,11 +1,6 @@
-import izdanja from './data/specijali.json' assert {type: 'json'}
+import izdanja from '../data/specijali.json' assert {type: 'json'}
 
 const specijal = new Set(JSON.parse(localStorage.getItem('specijal')))
-
-const res = izdanja.map(red => {
-  return red
-})
-console.log(res)
 
 const zaglavlje = 
 [

@@ -1,4 +1,4 @@
-import izdanja from './data/redovna.json' assert {type: 'json'}
+import izdanja from '../data/redovna.json' assert {type: 'json'}
 
 const sacuvano = new Set(JSON.parse(localStorage.getItem('sacuvano')))
 
