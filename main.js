@@ -46,7 +46,7 @@ const redoviHtml = izdanja
 .map(red => red.filter((col, i) => !sakrij.includes(i)))
 .map(red =>
   `<tr>
-    <td><input type="checkbox" name="${red[0]}" ${sacuvano.has(red[0]) ? 'checked' : ''} ></td>
+    <td><input type="checkbox" name="${red[0]}" ${sacuvano.has(red[0].toString()) ? 'checked' : ''} ></td>
     ${red.map(td => `<td>${td || ''}</td>`).join('')}
   </tr>`
 ).join('')
@@ -71,7 +71,7 @@ document.body.innerHTML += `
 
 document.addEventListener('click', ({ target }) => {
   if (!target.name) return
-  if (target.checked) sacuvano.add(Number(target.name))
-  else sacuvano.delete(Number(target.name))
+  if (target.checked) sacuvano.add(target.name)
+  else sacuvano.delete(target.name)
   localStorage.setItem('sacuvano', JSON.stringify([...sacuvano]))
 })
