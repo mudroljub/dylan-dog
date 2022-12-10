@@ -21,17 +21,10 @@ const zaglavlje =
   "br.",
   "naslov",
   "godina",
-  "edicija",
-  "br.",
-  "naslov",
-  "godina",
-  "edicija",
-  "br.",
-  "naslov",
-  "godina"
+  ''
 ]
 
-const sakrij = [5, 6, 7, 11, 15, 19]
+const sakrij = [5, 6, 7, 11, 12]
 
 /* FILTER & MAP */
 
@@ -43,7 +36,7 @@ const redoviHtml = izdanja
 .map(red => red.filter((col, i) => !sakrij.includes(i)))
 .map(red =>
   `<tr>
-    <td><input type="checkbox" name="${red[0]}" ${superbook.has(red[0].toString()) ? 'checked' : ''} ></td>
+    <td><input type="checkbox" name="${red[0]}" ${superbook.has(red[0]?.toString()) ? 'checked' : ''} ></td>
     ${red.map(td => `<td>${td || ''}</td>`).join('')}
   </tr>`
 ).join('')
