@@ -7,27 +7,27 @@ const res = izdanja.map(red => {
 })
 console.log(res)
 
-const zaglavlje = 
-[
-  'br.',
-  "originalni naslov",
-  "godina",
-  'br.',
-  "scenario",
-  "crtež",
-  "naslovna",
-  "boja",
-  "edicija",
-  'br.',
-  "naslov",
-  "godina",
-  "edicija",
-  'br.',
-  "naslov",
-  "godina"
-]
+const zaglavlje =
+  [
+    'br.',
+    "originalni naslov",
+    "godina",
+    'str.',
+    "scenario",
+    "crtež",
+    "naslovna",
+    "boja",
+    "edicija",
+    'br.',
+    "naslov",
+    "godina",
+    "edicija",
+    'br.',
+    "naslov",
+    "godina"
+  ]
 
-const sakrij = []
+const sakrij = [3, 5, 6, 7, 11, 15]
 
 /* FILTER & MAP */
 
@@ -36,13 +36,13 @@ const zaglavljeHtml = zaglavlje
   .map(th => `<th>${th}</th>`).join('')
 
 const redoviHtml = izdanja
-.map(red => red.filter((col, i) => !sakrij.includes(i)))
-.map(red =>
-  `<tr>
+  .map(red => red.filter((col, i) => !sakrij.includes(i)))
+  .map(red =>
+    `<tr>
     <td><input type="checkbox" name="${red[0]}" ${almanahStraha.has(red[0]?.toString()) ? 'checked' : ''} ></td>
     ${red.map(td => `<td>${td || ''}</td>`).join('')}
   </tr>`
-).join('')
+  ).join('')
 
 /* RENDER */
 
