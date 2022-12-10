@@ -4,24 +4,24 @@ const sakrij = [3, 6, 16, 17, 18]
 
 const svaZaglavlja = [
   "br.",
-  "ORIGINALNI NAZIV",
-  "GODINA",
+  "naziv",
+  "god.",
   "str",
-  "SCENARIO",
-  "CRTEŽ",
-  "NASLOVNA",
-  "Dnevnik",
-  "NAZIV",
-  "GODINA",
-  "Slobodna Dalmacija / Ludens",
-  "NAZIV",
-  "GODINA",
+  "scenario",
+  "crtež",
+  "naslovna",
+  "Dnevnik<small> / Abaton / ostali</small>",
+  "prevod",
+  "god.",
+  "Ludens<small> / Slobodna dalmacija</small>",
+  "prevod",
+  "god.",
   "Veseli četvrtak",
-  "NAZIV",
-  "GODINA",
+  "prevod",
+  "god.",
   "Libellus",
-  "NAZIV",
-  "GODINA",
+  "prevod",
+  "god.",
 ]
 
 const zaglavlje = svaZaglavlja.filter((x, i) => !sakrij.includes(i))
@@ -30,7 +30,7 @@ const izdanja = svaIzdanja.map(izdanje => izdanje.filter((x, i) => !sakrij.inclu
 const zaglavljeHtml = zaglavlje.map(th => `<th>${th}</th>`).join('')
 
 const izdanjaHtml = izdanja.map(red => 
-  `<tr>${red.map(td => `<td>${td}</td>`).join('')}</tr>`
+  `<tr>${red.map(td => `<td>${td || ''}</td>`).join('')}</tr>`
 ).join('')
 
 document.body.innerHTML = `
