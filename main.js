@@ -5,8 +5,8 @@ const sacuvano = new Set(JSON.parse(localStorage.getItem('sacuvano')))
 const zaglavlje = 
 [
   "br.",      // 0
-  "naslov",   // 1
-  "god.",     // 2
+  "originalni naslov",   // 1
+  "godina",   // 2
   "str",      // 3
   "scenario", // 4
   "crtež",    // 5
@@ -15,23 +15,23 @@ const zaglavlje =
   "edicija",  // 8
   "br.",      // 9
   "naslov",   // 10
-  "god.",     // 11
+  "godina",   // 11
   "edicija",  // 12
   "br.",      // 13
   "naslov",   // 14
-  "god.",     // 15
+  "godina",   // 15
   "edicija",  // 16
   "br.",      // 17
   "naslov",   // 18
-  "god.",     // 19
+  "godina",   // 19
   "edicija",  // 20
   "br.",      // 21
   "naslov",   // 22
-  "god.",     // 23
+  "godina",   // 23
   "edicija",  // 24
   "br.",      // 25
   "naslov",   // 26
-  "god."      // 27
+  "godina"    // 27
 ]
 
 const sakrij = [3, 5, 6, 7, 11, 15, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]

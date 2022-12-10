@@ -10,7 +10,7 @@ console.log(res)
 const zaglavlje = 
 [
   "br.",
-  "originalni naziv",
+  "originalni naslov",
   "godina",
   "br.",
   "scenario",
@@ -19,19 +19,19 @@ const zaglavlje =
   "boja",
   "edicija",
   "br.",
-  "naziv",
+  "naslov",
   "godina",
   "edicija",
   "br.",
-  "naziv",
+  "naslov",
   "godina",
   "edicija",
   "br.",
-  "naziv",
+  "naslov",
   "godina"
 ]
 
-const sakrij = [5, 6, 7]
+const sakrij = [5, 6, 7, 11, 15, 19]
 
 /* FILTER & MAP */
 
