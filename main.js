@@ -2,6 +2,7 @@ import redovnaIzdanja from './data/redovna.json' assert {type: 'json'}
 import specijalIzdanja from './data/specijali.json' assert {type: 'json'}
 import superbookIzdanja from './data/super-book.json' assert {type: 'json'}
 import almanahIzdanja from './data/almanah-straha.json' assert {type: 'json'}
+import maxiIzdanja from './data/maxi.json' assert {type: 'json'}
 
 const kolekcija = new Set(JSON.parse(localStorage.getItem('kolekcija')))
 
@@ -102,6 +103,26 @@ const almanahZaglavlje =
   ]
 const almanahSakrijKolone = [5, 6, 7, 11, 15]
 
+const maxiZaglavlje = [
+  "br.",
+  "naslov originala",
+  "godina",
+  "str.",
+  "scenario",
+  "crtež",
+  "naslovna",
+  "boja",
+  "edicija",
+  "br.",
+  "naslov",
+  "godina",
+  "edicija",
+  "br.",
+  "naslov",
+  "godina"
+]
+const maxiSakrijKolone = [5, 6, 7, 11, 15]
+
 /* FILTER & MAP */
 
 const redovnaZaglavljeHtml = redovnaZaglavlje
@@ -160,6 +181,20 @@ const almanahRedoviHtml = almanahIzdanja
     </tr>`
   }).join('')
 
+const maxiZaglavljeHtml = maxiZaglavlje
+  .filter((x, i) => !maxiSakrijKolone.includes(i))
+  .map(th => `<th>${th}</th>`).join('')
+
+const maxiRedoviHtml = maxiIzdanja
+  .map(red => red.filter((col, i) => !maxiSakrijKolone.includes(i)))
+  .map(red => {
+    const id = 'maxi-' + red[0]
+    return `<tr>
+      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
+      ${red.map(td => `<td>${td || ''}</td>`).join('')}
+    </tr>`
+  }).join('')
+
 /* RENDER */
 
 const renderTable = (id, zaglavljeHtml, redoviHtml, edicija) => {
@@ -182,6 +217,7 @@ renderTable('redovna', redovnaZaglavljeHtml, redovnaRedoviHtml, 'Sergio Bonelli 
 renderTable('specijal', specijalZaglavljeHtml, specijalRedoviHtml, 'Speciale')
 renderTable('super-book', superbookZaglavljeHtml, superbookRedoviHtml, 'Super Book')
 renderTable('almanah-straha', almanahZaglavljeHtml, almanahRedoviHtml, 'Almanacco della Paura')
+renderTable('maxi', maxiZaglavljeHtml, maxiRedoviHtml, 'Maxi')
 
 /* EVENTS */
 

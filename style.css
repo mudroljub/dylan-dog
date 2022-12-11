@@ -46,7 +46,9 @@ td:nth-child(3) {
 #specijal-tabla td:nth-child(12)+td:nth-child(13),
 #almanah-straha-tabla td:nth-child(6)+td:nth-child(7),
 #almanah-straha-tabla td:nth-child(9)+td:nth-child(10),
-#super-book-tabla td:nth-child(6)+td:nth-child(7) {
+#super-book-tabla td:nth-child(6)+td:nth-child(7),
+#maxi-tabla td:nth-child(6)+td:nth-child(7),
+#maxi-tabla td:nth-child(9)+td:nth-child(10) {
   border-left: 2px solid #999;
 }
 
@@ -60,7 +62,9 @@ td:nth-child(6),
 #almanah-straha-tabla td:nth-child(7),
 #almanah-straha-tabla td:nth-child(10),
 #super-book-tabla td:nth-child(7),
-#super-book-tabla td:nth-child(10) {
+#super-book-tabla td:nth-child(10),
+#maxi-tabla td:nth-child(7),
+#maxi-tabla td:nth-child(10) {
   font-size: x-small;
 }
 
@@ -91,7 +95,9 @@ th:nth-child(1),
 #specijal-tabla th:nth-child(13),
 #almanah-straha-tabla th:nth-child(7),
 #almanah-straha-tabla th:nth-child(10),
-#super-book-tabla th:nth-child(7) {
+#super-book-tabla th:nth-child(7),
+#maxi-tabla th:nth-child(7),
+#maxi-tabla th:nth-child(10) {
   color: #ccc;
   font-size: small;
 }
@@ -101,8 +107,21 @@ th:nth-child(1),
 #almanah-straha-tabla th:nth-child(6),
 #almanah-straha-tabla td:nth-child(6),
 #specijal-tabla th:nth-child(6),
-#specijal-tabla td:nth-child(6) {
+#specijal-tabla td:nth-child(6),
+#maxi-tabla td:nth-child(6),
+#maxi-tabla th:nth-child(6) {
   width: 60px;
+}
+
+#maxi-tabla td:nth-child(10),
+#maxi-tabla th:nth-child(10),
+#super-book-tabla td:nth-child(7),
+#super-book-tabla th:nth-child(7),
+#almanah-straha-tabla td:nth-child(7),
+#almanah-straha-tabla th:nth-child(7),
+#almanah-straha-tabla td:nth-child(10),
+#almanah-straha-tabla th:nth-child(10) {
+  width: 80px;
 }
 
 @media (min-width: 1000px) {
