@@ -102,6 +102,10 @@ th:nth-child(1),
 }
 
 #super-book-tabla th:nth-child(6),
-#super-book-tabla td:nth-child(6) {
-  width: 80px;
+#super-book-tabla td:nth-child(6),
+#almanah-straha-tabla th:nth-child(6),
+#almanah-straha-tabla td:nth-child(6),
+#specijal-tabla th:nth-child(6),
+#specijal-tabla td:nth-child(6) {
+  width: 60px;
 }
