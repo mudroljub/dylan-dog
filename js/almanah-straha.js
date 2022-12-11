@@ -22,7 +22,7 @@ const zaglavlje =
     "godina"
   ]
 
-const sakrij = [3, 5, 6, 7, 11, 15]
+const sakrij = [5, 6, 7, 11, 15]
 
 /* FILTER & MAP */
 
