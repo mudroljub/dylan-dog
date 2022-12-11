@@ -88,6 +88,10 @@ td:nth-child(2),
   color: maroon;
 }
 
+th:nth-child(1) {
+  font-style: italic;
+}
+
 th:nth-child(1),
 #redovna-tabla th:nth-child(6),
 #redovna-tabla th:nth-child(9),
@@ -99,6 +103,7 @@ th:nth-child(1),
 #almanah-straha-tabla th:nth-child(10),
 #super-book-tabla th:nth-child(7) {
   color: #ccc;
+  font-size: small;
 }
 
 #super-book-tabla th:nth-child(6),

@@ -167,7 +167,7 @@ const renderTable = (id, zaglavljeHtml, redoviHtml, edicija) => {
   <table id="${id}-tabla">
     <thead>
       <tr>
-        <th><small><i>${edicija}</i></small></th>
+        <th>${edicija}</th>
         ${zaglavljeHtml}
       </tr>
     </thead>
