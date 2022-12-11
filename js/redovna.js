@@ -1,8 +1,8 @@
-import izdanja from '../data/redovna.json' assert {type: 'json'}
+import redovnaIzdanja from '../data/redovna.json' assert {type: 'json'}
 
 const kolekcija = new Set(JSON.parse(localStorage.getItem('kolekcija')))
 
-const zaglavlje = 
+const redovnaZaglavlje = 
 [
   "br.",      // 0
   "naslov originala",   // 1
@@ -34,16 +34,16 @@ const zaglavlje =
   "godina"    // 27
 ]
 
-const sakrij = [3, 5, 6, 7, 11, 15, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+const redovnaSakrijKolone = [3, 5, 6, 7, 11, 15, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
 
 /* FILTER & MAP */
 
-const zaglavljeHtml = zaglavlje
-  .filter((x, i) => !sakrij.includes(i))
+const zaglavljeHtml = redovnaZaglavlje
+  .filter((x, i) => !redovnaSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
 
-const redoviHtml = izdanja
-.map(red => red.filter((col, i) => !sakrij.includes(i)))
+const redoviHtml = redovnaIzdanja
+.map(red => red.filter((col, i) => !redovnaSakrijKolone.includes(i)))
 .map(red => {
   const id = 'redovna-' + red[0]
   return `<tr>

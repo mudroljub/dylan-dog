@@ -1,8 +1,8 @@
-import izdanja from '../data/super-book.json' assert {type: 'json'}
+import superbookIzdanja from '../data/super-book.json' assert {type: 'json'}
 
 const kolekcija = new Set(JSON.parse(localStorage.getItem('kolekcija')))
 
-const zaglavlje = 
+const superbookZaglavlje = 
 [
   "br.",
   "naslov originala",
@@ -19,16 +19,16 @@ const zaglavlje =
   ''
 ]
 
-const sakrij = [5, 6, 7, 11, 12]
+const superbookSakrijKolone = [5, 6, 7, 11, 12]
 
 /* FILTER & MAP */
 
-const zaglavljeHtml = zaglavlje
-  .filter((x, i) => !sakrij.includes(i))
+const zaglavljeHtml = superbookZaglavlje
+  .filter((x, i) => !superbookSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
 
-const redoviHtml = izdanja
-.map(red => red.filter((col, i) => !sakrij.includes(i)))
+const redoviHtml = superbookIzdanja
+.map(red => red.filter((col, i) => !superbookSakrijKolone.includes(i)))
 .map(red => {
   const id = 'super-book-' + red[0]
   return `<tr>

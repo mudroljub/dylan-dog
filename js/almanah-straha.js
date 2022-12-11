@@ -1,8 +1,8 @@
-import izdanja from '../data/almanah-straha.json' assert {type: 'json'}
+import almanahIzdanja from '../data/almanah-straha.json' assert {type: 'json'}
 
 const kolekcija = new Set(JSON.parse(localStorage.getItem('kolekcija')))
 
-const zaglavlje =
+const almanahZaglavlje =
   [
     'br.',
     "naslov originala",
@@ -22,16 +22,16 @@ const zaglavlje =
     "godina"
   ]
 
-const sakrij = [5, 6, 7, 11, 15]
+const almanahSakrijKolone = [5, 6, 7, 11, 15]
 
 /* FILTER & MAP */
 
-const zaglavljeHtml = zaglavlje
-  .filter((x, i) => !sakrij.includes(i))
+const zaglavljeHtml = almanahZaglavlje
+  .filter((x, i) => !almanahSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
 
-const redoviHtml = izdanja
-  .map(red => red.filter((col, i) => !sakrij.includes(i)))
+const redoviHtml = almanahIzdanja
+  .map(red => red.filter((col, i) => !almanahSakrijKolone.includes(i)))
   .map(red => {
     const id = 'almanah-straha-' + red[0]
     return `<tr>
