@@ -49,7 +49,7 @@ document.getElementById('specijal').innerHTML = `
 <table id="specijal-tabla">
   <thead>
     <tr>
-      <th></th>
+      <th><small>Speciale</small></th>
       ${zaglavljeHtml}
     </tr>
   </thead>

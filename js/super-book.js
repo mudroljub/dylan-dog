@@ -7,7 +7,7 @@ const zaglavlje =
   "br.",
   "originalni naslov",
   "godina",
-  "br.",
+  "str.",
   "scenario",
   "crtež",
   "naslovna",
@@ -42,7 +42,7 @@ document.getElementById('super-book').innerHTML = `
 <table id="super-book-tabla">
   <thead>
     <tr>
-      <th></th>
+      <th><small>Super Book</small></th>
       ${zaglavljeHtml}
     </tr>
   </thead>

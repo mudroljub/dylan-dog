@@ -57,7 +57,7 @@ document.getElementById('redovna').innerHTML = `
 <table id="redovna-tabla">
   <thead>
     <tr>
-      <th></th>
+      <th><small>Bonelli redovna serija</small></th>
       ${zaglavljeHtml}
     </tr>
   </thead>

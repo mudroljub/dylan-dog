@@ -45,7 +45,7 @@ document.getElementById('almanah-straha').innerHTML = `
 <table id="almanah-straha-tabla">
   <thead>
     <tr>
-      <th></th>
+      <th><small>Almanacco della Paura</small></th>
       ${zaglavljeHtml}
     </tr>
   </thead>
