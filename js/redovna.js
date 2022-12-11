@@ -44,12 +44,13 @@ const zaglavljeHtml = zaglavlje
 
 const redoviHtml = izdanja
 .map(red => red.filter((col, i) => !sakrij.includes(i)))
-.map(red =>
-  `<tr>
-    <td><input type="checkbox" name="${red[0]}" ${redovna.has(red[0].toString()) ? 'checked' : ''} ></td>
-    ${red.map(td => `<td>${td || ''}</td>`).join('')}
-  </tr>`
-).join('')
+.map(red => {
+  const id = 'redovna-' + red[0]
+  return `<tr>
+  <td><input type="checkbox" name="${id}" ${redovna.has(id) ? 'checked' : ''} ></td>
+  ${red.map(td => `<td>${td || ''}</td>`).join('')}
+</tr>`
+}).join('')
 
 /* RENDER */
 

@@ -32,12 +32,13 @@ const zaglavljeHtml = zaglavlje
 
 const redoviHtml = izdanja
   .map(red => red.filter((col, i) => !sakrij.includes(i)))
-  .map(red =>
-    `<tr>
-    <td><input type="checkbox" name="${red[0]}" ${almanahStraha.has(red[0]?.toString()) ? 'checked' : ''} ></td>
+  .map(red => {
+    const id = 'almanah-straha-' + red[0]
+    return `<tr>
+    <td><input type="checkbox" name="${id}" ${almanahStraha.has(id) ? 'checked' : ''} ></td>
     ${red.map(td => `<td>${td || ''}</td>`).join('')}
   </tr>`
-  ).join('')
+  }).join('')
 
 /* RENDER */
 
