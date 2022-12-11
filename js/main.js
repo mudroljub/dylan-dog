@@ -1,6 +1,6 @@
 import izdanja from '../data/redovna.json' assert {type: 'json'}
 
-const sacuvano = new Set(JSON.parse(localStorage.getItem('sacuvano')))
+const redovna = new Set(JSON.parse(localStorage.getItem('redovna')))
 
 const zaglavlje = 
 [
@@ -46,7 +46,7 @@ const redoviHtml = izdanja
 .map(red => red.filter((col, i) => !sakrij.includes(i)))
 .map(red =>
   `<tr>
-    <td><input type="checkbox" name="${red[0]}" ${sacuvano.has(red[0].toString()) ? 'checked' : ''} ></td>
+    <td><input type="checkbox" name="${red[0]}" ${redovna.has(red[0].toString()) ? 'checked' : ''} ></td>
     ${red.map(td => `<td>${td || ''}</td>`).join('')}
   </tr>`
 ).join('')
@@ -71,7 +71,7 @@ document.getElementById('redovna').innerHTML = `
 
 document.getElementById('redovna-tabla').addEventListener('click', ({ target }) => {
   if (!target.name) return
-  if (target.checked) sacuvano.add(target.name)
-  else sacuvano.delete(target.name)
-  localStorage.setItem('sacuvano', JSON.stringify([...sacuvano]))
+  if (target.checked) redovna.add(target.name)
+  else redovna.delete(target.name)
+  localStorage.setItem('redovna', JSON.stringify([...redovna]))
 })
