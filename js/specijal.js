@@ -5,7 +5,7 @@ const specijal = new Set(JSON.parse(localStorage.getItem('specijal')))
 const zaglavlje = 
 [
   "br.",
-  "originalni naslov",
+  "naslov originala",
   "godina",
   "str.",
   "scenario",

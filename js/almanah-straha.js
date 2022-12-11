@@ -5,7 +5,7 @@ const almanahStraha = new Set(JSON.parse(localStorage.getItem('almanahStraha')))
 const zaglavlje =
   [
     'br.',
-    "originalni naslov",
+    "naslov originala",
     "godina",
     'str.',
     "scenario",

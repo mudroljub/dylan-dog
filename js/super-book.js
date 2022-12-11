@@ -5,7 +5,7 @@ const superbook = new Set(JSON.parse(localStorage.getItem('superbook')))
 const zaglavlje = 
 [
   "br.",
-  "originalni naslov",
+  "naslov originala",
   "godina",
   "str.",
   "scenario",

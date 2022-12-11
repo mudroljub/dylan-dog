@@ -5,7 +5,7 @@ const redovna = new Set(JSON.parse(localStorage.getItem('redovna')))
 const zaglavlje = 
 [
   "br.",      // 0
-  "originalni naslov",   // 1
+  "naslov originala",   // 1
   "godina",   // 2
   "str",      // 3
   "scenario", // 4
