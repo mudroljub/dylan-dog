@@ -7,7 +7,7 @@ const zaglavlje =
   "br.",
   "originalni naslov",
   "godina",
-  "br.",
+  "str.",
   "scenario",
   "crtež",
   "naslovna",
