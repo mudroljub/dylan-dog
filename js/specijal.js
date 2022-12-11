@@ -45,7 +45,7 @@ const redoviHtml = izdanja
 
 /* RENDER */
 
-document.body.innerHTML += `
+document.getElementById('specijal').innerHTML = `
 <table>
   <thead>
     <tr>

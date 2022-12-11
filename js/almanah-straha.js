@@ -46,7 +46,7 @@ const redoviHtml = izdanja
 
 /* RENDER */
 
-document.body.innerHTML += `
+document.getElementById('almanah-straha').innerHTML = `
 <table>
   <thead>
     <tr>

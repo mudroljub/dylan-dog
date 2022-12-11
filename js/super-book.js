@@ -38,7 +38,7 @@ const redoviHtml = izdanja
 
 /* RENDER */
 
-document.body.innerHTML += `
+document.getElementById('super-book').innerHTML = `
 <table>
   <thead>
     <tr>
