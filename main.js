@@ -113,9 +113,9 @@ const redovnaRedoviHtml = redovnaIzdanja
   .map(red => {
     const id = 'redovna-' + red[0]
     return `<tr>
-  <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
-  ${red.map(td => `<td>${td || ''}</td>`).join('')}
-</tr>`
+      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
+      ${red.map(td => `<td>${td || ''}</td>`).join('')}
+    </tr>`
   }).join('')
 
 const specijalZaglavljeHtml = specijalZaglavlje
@@ -127,9 +127,9 @@ const specijalRedoviHtml = specijalIzdanja
   .map(red => {
     const id = 'specijal-' + red[0]
     return `<tr>
-  <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
-  ${red.map(td => `<td>${td || ''}</td>`).join('')}
-</tr>`
+      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
+      ${red.map(td => `<td>${td || ''}</td>`).join('')}
+    </tr>`
   }).join('')
 
 const superbookZaglavljeHtml = superbookZaglavlje
@@ -141,11 +141,10 @@ const superbookRedoviHtml = superbookIzdanja
   .map(red => {
     const id = 'super-book-' + red[0]
     return `<tr>
-  <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
-  ${red.map(td => `<td>${td || ''}</td>`).join('')}
-</tr>`
+      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
+      ${red.map(td => `<td>${td || ''}</td>`).join('')}
+    </tr>`
   }).join('')
-
 
 const almanahZaglavljeHtml = almanahZaglavlje
   .filter((x, i) => !almanahSakrijKolone.includes(i))
@@ -156,68 +155,33 @@ const almanahRedoviHtml = almanahIzdanja
   .map(red => {
     const id = 'almanah-straha-' + red[0]
     return `<tr>
-  <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
-  ${red.map(td => `<td>${td || ''}</td>`).join('')}
-</tr>`
+      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
+      ${red.map(td => `<td>${td || ''}</td>`).join('')}
+    </tr>`
   }).join('')
 
 /* RENDER */
 
-document.getElementById('redovna').innerHTML = `
-<table id="redovna-tabla">
-  <thead>
-    <tr>
-      <th><small>Bonelli redovna serija</small></th>
-      ${redovnaZaglavljeHtml}
-    </tr>
-  </thead>
-  <tbody>
-    ${redovnaRedoviHtml}
-  </tbody>
-</table>
-`
+const renderTable = (id, zaglavljeHtml, redoviHtml, edicija) => {
+  document.getElementById(id).innerHTML = `
+  <table id="${id}-tabla">
+    <thead>
+      <tr>
+        <th><small><i>${edicija}</i></small></th>
+        ${zaglavljeHtml}
+      </tr>
+    </thead>
+    <tbody>
+      ${redoviHtml}
+    </tbody>
+  </table>
+  `
+}
 
-document.getElementById('specijal').innerHTML = `
-<table id="specijal-tabla">
-  <thead>
-    <tr>
-      <th><small>Speciale</small></th>
-      ${specijalZaglavljeHtml}
-    </tr>
-  </thead>
-  <tbody>
-    ${specijalRedoviHtml}
-  </tbody>
-</table>
-`
-
-document.getElementById('super-book').innerHTML = `
-<table id="super-book-tabla">
-  <thead>
-    <tr>
-      <th><small>Super Book</small></th>
-      ${superbookZaglavljeHtml}
-    </tr>
-  </thead>
-  <tbody>
-    ${superbookRedoviHtml}
-  </tbody>
-</table>
-`
-
-document.getElementById('almanah-straha').innerHTML = `
-<table id="almanah-straha-tabla">
-  <thead>
-    <tr>
-      <th><small>Almanacco della Paura</small></th>
-      ${almanahZaglavljeHtml}
-    </tr>
-  </thead>
-  <tbody>
-    ${almanahRedoviHtml}
-  </tbody>
-</table>
-`
+renderTable('redovna', redovnaZaglavljeHtml, redovnaRedoviHtml, 'Sergio Bonelli Editore')
+renderTable('specijal', specijalZaglavljeHtml, specijalRedoviHtml, 'Speciale')
+renderTable('super-book', superbookZaglavljeHtml, superbookRedoviHtml, 'Super Book')
+renderTable('almanah-straha', almanahZaglavljeHtml, almanahRedoviHtml, 'Almanacco della Paura')
 
 /* EVENTS */
 
