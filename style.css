@@ -38,16 +38,6 @@ td:nth-child(3) {
   font-style: italic;
 }
 
-#redovna-tabla td:nth-child(8),
-#redovna-tabla td:nth-child(11),
-#redovna-tabla td:nth-child(14),
-#specijal-tabla td:nth-child(15),
-#almanah-straha-tabla td:nth-child(9),
-#almanah-straha-tabla td:nth-child(12),
-#super-book-tabla td:nth-child(9) {
-  white-space: nowrap;
-}
-
 #redovna-tabla td:nth-child(5)+td:nth-child(6),
 #redovna-tabla td:nth-child(8)+td:nth-child(9),
 #redovna-tabla td:nth-child(11)+td:nth-child(12),
@@ -113,4 +103,16 @@ th:nth-child(1),
 #specijal-tabla th:nth-child(6),
 #specijal-tabla td:nth-child(6) {
   width: 60px;
+}
+
+@media (min-width: 1000px) {
+  #redovna-tabla td:nth-child(8),
+  #redovna-tabla td:nth-child(11),
+  #redovna-tabla td:nth-child(14),
+  #specijal-tabla td:nth-child(15),
+  #almanah-straha-tabla td:nth-child(9),
+  #almanah-straha-tabla td:nth-child(12),
+  #super-book-tabla td:nth-child(9) {
+    white-space: nowrap;
+  }
 }
