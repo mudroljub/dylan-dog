@@ -2,11 +2,6 @@ import izdanja from '../data/almanah-straha.json' assert {type: 'json'}
 
 const almanahStraha = new Set(JSON.parse(localStorage.getItem('almanahStraha')))
 
-const res = izdanja.map(red => {
-  return red
-})
-console.log(res)
-
 const zaglavlje =
   [
     'br.',
