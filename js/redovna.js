@@ -38,11 +38,11 @@ const redovnaSakrijKolone = [3, 5, 6, 7, 11, 15, 19, 20, 21, 22, 23, 24, 25, 26,
 
 /* FILTER & MAP */
 
-const zaglavljeHtml = redovnaZaglavlje
+const redovnaZaglavljeHtml = redovnaZaglavlje
   .filter((x, i) => !redovnaSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
 
-const redoviHtml = redovnaIzdanja
+const redovnaRedoviHtml = redovnaIzdanja
 .map(red => red.filter((col, i) => !redovnaSakrijKolone.includes(i)))
 .map(red => {
   const id = 'redovna-' + red[0]
@@ -59,11 +59,11 @@ document.getElementById('redovna').innerHTML = `
   <thead>
     <tr>
       <th><small>Bonelli redovna serija</small></th>
-      ${zaglavljeHtml}
+      ${redovnaZaglavljeHtml}
     </tr>
   </thead>
   <tbody>
-    ${redoviHtml}
+    ${redovnaRedoviHtml}
   </tbody>
 </table>
 `

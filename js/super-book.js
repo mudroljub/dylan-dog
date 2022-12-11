@@ -23,11 +23,11 @@ const superbookSakrijKolone = [5, 6, 7, 11, 12]
 
 /* FILTER & MAP */
 
-const zaglavljeHtml = superbookZaglavlje
+const superbookZaglavljeHtml = superbookZaglavlje
   .filter((x, i) => !superbookSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
 
-const redoviHtml = superbookIzdanja
+const superbookRedoviHtml = superbookIzdanja
 .map(red => red.filter((col, i) => !superbookSakrijKolone.includes(i)))
 .map(red => {
   const id = 'super-book-' + red[0]
@@ -44,11 +44,11 @@ document.getElementById('super-book').innerHTML = `
   <thead>
     <tr>
       <th><small>Super Book</small></th>
-      ${zaglavljeHtml}
+      ${superbookZaglavljeHtml}
     </tr>
   </thead>
   <tbody>
-    ${redoviHtml}
+    ${superbookRedoviHtml}
   </tbody>
 </table>
 `

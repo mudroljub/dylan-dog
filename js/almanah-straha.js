@@ -26,11 +26,11 @@ const almanahSakrijKolone = [5, 6, 7, 11, 15]
 
 /* FILTER & MAP */
 
-const zaglavljeHtml = almanahZaglavlje
+const almanahZaglavljeHtml = almanahZaglavlje
   .filter((x, i) => !almanahSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
 
-const redoviHtml = almanahIzdanja
+const almanahRedoviHtml = almanahIzdanja
   .map(red => red.filter((col, i) => !almanahSakrijKolone.includes(i)))
   .map(red => {
     const id = 'almanah-straha-' + red[0]
@@ -47,11 +47,11 @@ document.getElementById('almanah-straha').innerHTML = `
   <thead>
     <tr>
       <th><small>Almanacco della Paura</small></th>
-      ${zaglavljeHtml}
+      ${almanahZaglavljeHtml}
     </tr>
   </thead>
   <tbody>
-    ${redoviHtml}
+    ${almanahRedoviHtml}
   </tbody>
 </table>
 `

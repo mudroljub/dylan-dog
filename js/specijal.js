@@ -30,11 +30,11 @@ const specijalSakrijKolone = [5, 6, 7, 11, 15, 19]
 
 /* FILTER & MAP */
 
-const zaglavljeHtml = specijalZaglavlje
+const specijalZaglavljeHtml = specijalZaglavlje
   .filter((x, i) => !specijalSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
 
-const redoviHtml = specijalIzdanja
+const specijalRedoviHtml = specijalIzdanja
 .map(red => red.filter((col, i) => !specijalSakrijKolone.includes(i)))
 .map(red => {
   const id = 'specijal-' + red[0]
@@ -51,11 +51,11 @@ document.getElementById('specijal').innerHTML = `
   <thead>
     <tr>
       <th><small>Speciale</small></th>
-      ${zaglavljeHtml}
+      ${specijalZaglavljeHtml}
     </tr>
   </thead>
   <tbody>
-    ${redoviHtml}
+    ${specijalRedoviHtml}
   </tbody>
 </table>
 `
