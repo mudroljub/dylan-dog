@@ -35,6 +35,10 @@
       color: maroon;
     }
 
+    td:nth-child(3) {
+      font-style: italic;
+    }
+
     th:nth-child(2),
     td:nth-child(2),
     td:nth-child(7),
@@ -49,18 +53,13 @@
       text-align: center;
     }
 
-
-    td:nth-child(3) {
-      font-style: italic;
-    }
-
-    td:nth-child(8),
+    /* td:nth-child(8),
     td:nth-child(11),
     td:nth-child(14) {
       white-space: nowrap;
-    }
+    } */
 
-    td:nth-child(5),
+    /* td:nth-child(5),
     td:nth-child(6),
     td:nth-child(9),
     td:nth-child(12) {
@@ -71,7 +70,7 @@
     td:nth-child(8) + td:nth-child(9),
     td:nth-child(11) + td:nth-child(12) { 
       border-left: 2px solid #666; 
-    }
+    } */
 
   </style>
 </head>
@@ -81,16 +80,17 @@
   <img src="dylan_dog.webp" alt="logo">
 
   <ul>
-    <li><a href="index.html">redovna izdanja</a></li>
-    <li><a href="specijal.html">specijal</a></li>
-    <li><a href="super-book.html">super book</a></li>
-    <li><a href="almanah-straha.html">almanah straha</a></li>
+    <li><a href="index.html">Redovna izdanja</a></li>
+    <li><a href="specijal.html">Specijal</a></li>
+    <li><a href="almanah-straha.html">Almanah straha</a></li>
+    <li><a href="super-book.html">Super book</a></li>
   </ul>
 
   <h1>Dylan Dog spisak epizoda: redovna izdanja</h1>
 
-  <script src="js/main.js" type="module"></script>
+  <div id="redovna"></div>
 
+  <script src="js/main.js" type="module"></script>
 </body>
 
 </html>

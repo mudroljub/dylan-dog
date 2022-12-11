@@ -53,7 +53,7 @@ const redoviHtml = izdanja
 
 /* RENDER */
 
-document.body.innerHTML += `
+document.getElementById('redovna').innerHTML = `
 <table>
   <thead>
     <tr>
