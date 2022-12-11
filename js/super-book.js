@@ -39,7 +39,7 @@ const redoviHtml = izdanja
 /* RENDER */
 
 document.getElementById('super-book').innerHTML = `
-<table>
+<table id="super-book-tabla">
   <thead>
     <tr>
       <th></th>
@@ -54,7 +54,7 @@ document.getElementById('super-book').innerHTML = `
 
 /* EVENTS */
 
-document.addEventListener('click', ({ target }) => {
+document.getElementById('super-book-tabla').addEventListener('click', ({ target }) => {
   if (!target.name) return
   if (target.checked) superbook.add(target.name)
   else superbook.delete(target.name)

@@ -54,7 +54,7 @@ const redoviHtml = izdanja
 /* RENDER */
 
 document.getElementById('redovna').innerHTML = `
-<table>
+<table id="redovna-tabla">
   <thead>
     <tr>
       <th></th>
@@ -69,7 +69,7 @@ document.getElementById('redovna').innerHTML = `
 
 /* EVENTS */
 
-document.addEventListener('click', ({ target }) => {
+document.getElementById('redovna-tabla').addEventListener('click', ({ target }) => {
   if (!target.name) return
   if (target.checked) sacuvano.add(target.name)
   else sacuvano.delete(target.name)

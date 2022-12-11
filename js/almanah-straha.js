@@ -47,7 +47,7 @@ const redoviHtml = izdanja
 /* RENDER */
 
 document.getElementById('almanah-straha').innerHTML = `
-<table>
+<table id="almanah-straha-tabla">
   <thead>
     <tr>
       <th></th>
@@ -62,7 +62,7 @@ document.getElementById('almanah-straha').innerHTML = `
 
 /* EVENTS */
 
-document.addEventListener('click', ({ target }) => {
+document.getElementById('almanah-straha-tabla').addEventListener('click', ({ target }) => {
   if (!target.name) return
   if (target.checked) almanahStraha.add(target.name)
   else almanahStraha.delete(target.name)

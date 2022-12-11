@@ -46,7 +46,7 @@ const redoviHtml = izdanja
 /* RENDER */
 
 document.getElementById('specijal').innerHTML = `
-<table>
+<table id="specijal-tabla">
   <thead>
     <tr>
       <th></th>
@@ -61,7 +61,7 @@ document.getElementById('specijal').innerHTML = `
 
 /* EVENTS */
 
-document.addEventListener('click', ({ target }) => {
+document.getElementById('specijal-tabla').addEventListener('click', ({ target }) => {
   if (!target.name) return
   if (target.checked) specijal.add(target.name)
   else specijal.delete(target.name)
