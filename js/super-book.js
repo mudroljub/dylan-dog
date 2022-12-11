@@ -1,6 +1,6 @@
 import izdanja from '../data/super-book.json' assert {type: 'json'}
 
-const superbook = new Set(JSON.parse(localStorage.getItem('superbook')))
+const kolekcija = new Set(JSON.parse(localStorage.getItem('kolekcija')))
 
 const zaglavlje = 
 [
@@ -32,7 +32,7 @@ const redoviHtml = izdanja
 .map(red => {
   const id = 'super-book-' + red[0]
   return `<tr>
-  <td><input type="checkbox" name="${id}" ${superbook.has(id) ? 'checked' : ''} ></td>
+  <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
   ${red.map(td => `<td>${td || ''}</td>`).join('')}
 </tr>`
 }).join('')
@@ -52,12 +52,3 @@ document.getElementById('super-book').innerHTML = `
   </tbody>
 </table>
 `
-
-/* EVENTS */
-
-document.getElementById('super-book-tabla').addEventListener('click', ({ target }) => {
-  if (!target.name) return
-  if (target.checked) superbook.add(target.name)
-  else superbook.delete(target.name)
-  localStorage.setItem('superbook', JSON.stringify([...superbook]))
-})

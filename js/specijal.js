@@ -1,6 +1,6 @@
 import izdanja from '../data/specijali.json' assert {type: 'json'}
 
-const specijal = new Set(JSON.parse(localStorage.getItem('specijal')))
+const kolekcija = new Set(JSON.parse(localStorage.getItem('kolekcija')))
 
 const zaglavlje = 
 [
@@ -39,7 +39,7 @@ const redoviHtml = izdanja
 .map(red => {
   const id = 'specijal-' + red[0]
   return `<tr>
-  <td><input type="checkbox" name="${id}" ${specijal.has(id) ? 'checked' : ''} ></td>
+  <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
   ${red.map(td => `<td>${td || ''}</td>`).join('')}
 </tr>`
 }).join('')
@@ -59,12 +59,3 @@ document.getElementById('specijal').innerHTML = `
   </tbody>
 </table>
 `
-
-/* EVENTS */
-
-document.getElementById('specijal-tabla').addEventListener('click', ({ target }) => {
-  if (!target.name) return
-  if (target.checked) specijal.add(target.name)
-  else specijal.delete(target.name)
-  localStorage.setItem('specijal', JSON.stringify([...specijal]))
-})

@@ -1,6 +1,6 @@
 import izdanja from '../data/almanah-straha.json' assert {type: 'json'}
 
-const almanahStraha = new Set(JSON.parse(localStorage.getItem('almanahStraha')))
+const kolekcija = new Set(JSON.parse(localStorage.getItem('kolekcija')))
 
 const zaglavlje =
   [
@@ -35,7 +35,7 @@ const redoviHtml = izdanja
   .map(red => {
     const id = 'almanah-straha-' + red[0]
     return `<tr>
-    <td><input type="checkbox" name="${id}" ${almanahStraha.has(id) ? 'checked' : ''} ></td>
+    <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
     ${red.map(td => `<td>${td || ''}</td>`).join('')}
   </tr>`
   }).join('')
@@ -55,12 +55,3 @@ document.getElementById('almanah-straha').innerHTML = `
   </tbody>
 </table>
 `
-
-/* EVENTS */
-
-document.getElementById('almanah-straha-tabla').addEventListener('click', ({ target }) => {
-  if (!target.name) return
-  if (target.checked) almanahStraha.add(target.name)
-  else almanahStraha.delete(target.name)
-  localStorage.setItem('almanahStraha', JSON.stringify([...almanahStraha]))
-})
