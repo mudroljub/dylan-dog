@@ -102,15 +102,23 @@ th:nth-child(1),
   font-size: small;
 }
 
+#maxi-tabla td:nth-child(7),
+#maxi-tabla th:nth-child(7),
 #super-book-tabla th:nth-child(6),
 #super-book-tabla td:nth-child(6),
 #almanah-straha-tabla th:nth-child(6),
 #almanah-straha-tabla td:nth-child(6),
 #specijal-tabla th:nth-child(6),
 #specijal-tabla td:nth-child(6),
-#maxi-tabla td:nth-child(6),
-#maxi-tabla th:nth-child(6) {
-  width: 60px;
+#redovna-tabla td:nth-child(5),
+#redovna-tabla th:nth-child(5),
+#redovna-tabla td:nth-child(6),
+#redovna-tabla th:nth-child(6),
+#redovna-tabla td:nth-child(9),
+#redovna-tabla th:nth-child(9),
+#redovna-tabla td:nth-child(12),
+#redovna-tabla th:nth-child(12) {
+  width: 50px;
 }
 
 #maxi-tabla td:nth-child(10),
@@ -121,17 +129,24 @@ th:nth-child(1),
 #almanah-straha-tabla th:nth-child(7),
 #almanah-straha-tabla td:nth-child(10),
 #almanah-straha-tabla th:nth-child(10) {
-  width: 80px;
+  width: 70px;
 }
 
-@media (min-width: 1000px) {
-  #redovna-tabla td:nth-child(8),
-  #redovna-tabla td:nth-child(11),
-  #redovna-tabla td:nth-child(14),
-  #specijal-tabla td:nth-child(15),
-  #almanah-straha-tabla td:nth-child(9),
-  #almanah-straha-tabla td:nth-child(12),
-  #super-book-tabla td:nth-child(9) {
-    white-space: nowrap;
-  }
+#maxi-tabla td:nth-child(6),
+#maxi-tabla th:nth-child(6) {
+  width: 85px;
+}
+
+#redovna-tabla td:nth-child(8),
+#redovna-tabla td:nth-child(11),
+#redovna-tabla td:nth-child(14),
+#specijal td:nth-child(9),
+#specijal td:nth-child(12),
+#specijal td:nth-child(15),
+#almanah-straha td:nth-child(9),
+#almanah-straha td:nth-child(12),
+#super-book td:nth-child(9),
+#maxi td:nth-child(9),
+#maxi td:nth-child(12) {
+  text-transform: uppercase;
 }
