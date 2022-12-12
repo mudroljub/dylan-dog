@@ -41,17 +41,9 @@ td:nth-child(3) {
 #redovna-tabla td:nth-child(5)+td:nth-child(6),
 #redovna-tabla td:nth-child(8)+td:nth-child(9),
 #redovna-tabla td:nth-child(11)+td:nth-child(12),
-#specijal-tabla td:nth-child(6)+td:nth-child(7),
-#specijal-tabla td:nth-child(9)+td:nth-child(10),
-#specijal-tabla td:nth-child(12)+td:nth-child(13),
-#gigant-tabla td:nth-child(6)+td:nth-child(7),
-#gigant-tabla td:nth-child(9)+td:nth-child(10),
-#gigant-tabla td:nth-child(12)+td:nth-child(13),
-#almanah-straha-tabla td:nth-child(6)+td:nth-child(7),
-#almanah-straha-tabla td:nth-child(9)+td:nth-child(10),
-#super-book-tabla td:nth-child(6)+td:nth-child(7),
-#maxi-tabla td:nth-child(6)+td:nth-child(7),
-#maxi-tabla td:nth-child(9)+td:nth-child(10) {
+table:not(#redovna-tabla) td:nth-child(6)+td:nth-child(7),
+table:not(#redovna-tabla) td:nth-child(9)+td:nth-child(10),
+table:not(#redovna-tabla) td:nth-child(12)+td:nth-child(13) {
   border-left: 2px solid #999;
 }
 
@@ -59,34 +51,19 @@ td:nth-child(5),
 td:nth-child(6),
 #redovna-tabla td:nth-child(9),
 #redovna-tabla td:nth-child(12),
-#specijal-tabla td:nth-child(7),
-#specijal-tabla td:nth-child(10),
-#specijal-tabla td:nth-child(13),
-#gigant td:nth-child(7),
-#gigant td:nth-child(10),
-#gigant td:nth-child(13),
-#almanah-straha-tabla td:nth-child(7),
-#almanah-straha-tabla td:nth-child(10),
-#super-book-tabla td:nth-child(7),
-#super-book-tabla td:nth-child(10),
-#maxi-tabla td:nth-child(7),
-#maxi-tabla td:nth-child(10) {
+table:not(#redovna-tabla) td:nth-child(7),
+table:not(#redovna-tabla) td:nth-child(10),
+table:not(#redovna-tabla) td:nth-child(13) {
   font-size: x-small;
 }
 
 td:nth-child(2),
-#super-book-tabla td:nth-child(8),
-#almanah-straha-tabla td:nth-child(8),
-#almanah-straha-tabla td:nth-child(11),
-#specijal-tabla td:nth-child(8),
-#specijal-tabla td:nth-child(11),
-#specijal-tabla td:nth-child(14),
-#gigant-tabla td:nth-child(8),
-#gigant-tabla td:nth-child(11),
-#gigant-tabla td:nth-child(14),
 #redovna-tabla td:nth-child(7),
 #redovna-tabla td:nth-child(10),
-#redovna-tabla td:nth-child(13) {
+#redovna-tabla td:nth-child(13),
+table:not(#redovna-tabla) td:nth-child(8),
+table:not(#redovna-tabla) td:nth-child(11),
+table:not(#redovna-tabla) td:nth-child(14) {
   text-align: right;
   color: maroon;
 }
@@ -99,31 +76,13 @@ th:nth-child(1),
 #redovna-tabla th:nth-child(6),
 #redovna-tabla th:nth-child(9),
 #redovna-tabla th:nth-child(12),
-#specijal-tabla th:nth-child(7),
-#specijal-tabla th:nth-child(10),
-#specijal-tabla th:nth-child(13),
-#gigant-tabla th:nth-child(7),
-#gigant-tabla th:nth-child(10),
-#gigant-tabla th:nth-child(13),
-#almanah-straha-tabla th:nth-child(7),
-#almanah-straha-tabla th:nth-child(10),
-#super-book-tabla th:nth-child(7),
-#maxi-tabla th:nth-child(7),
-#maxi-tabla th:nth-child(10) {
+table:not(#redovna-tabla) th:nth-child(7),
+table:not(#redovna-tabla) th:nth-child(10),
+table:not(#redovna-tabla) th:nth-child(13) {
   color: #ccc;
   font-size: small;
 }
 
-#maxi-tabla td:nth-child(7),
-#maxi-tabla th:nth-child(7),
-#super-book-tabla th:nth-child(6),
-#super-book-tabla td:nth-child(6),
-#almanah-straha-tabla th:nth-child(6),
-#almanah-straha-tabla td:nth-child(6),
-#gigant-tabla th:nth-child(6),
-#gigant-tabla td:nth-child(6),
-#specijal-tabla th:nth-child(6),
-#specijal-tabla td:nth-child(6),
 #redovna-tabla td:nth-child(5),
 #redovna-tabla th:nth-child(5),
 #redovna-tabla td:nth-child(6),
@@ -132,45 +91,22 @@ th:nth-child(1),
 #redovna-tabla th:nth-child(9),
 #redovna-tabla td:nth-child(12),
 #redovna-tabla th:nth-child(12),
-#gigant-tabla th:nth-child(10),
-#gigant-tabla td:nth-child(7),
-#gigant-tabla th:nth-child(7),
-#gigant-tabla td:nth-child(10),
-#gigant-tabla th:nth-child(10) {
-  width: 50px;
-}
-
-#maxi-tabla td:nth-child(10),
-#maxi-tabla th:nth-child(10),
-#super-book-tabla td:nth-child(7),
-#super-book-tabla th:nth-child(7),
-#almanah-straha-tabla td:nth-child(7),
-#almanah-straha-tabla th:nth-child(7),
-#almanah-straha-tabla td:nth-child(10),
-#almanah-straha-tabla th:nth-child(10),
-#gigant-tabla td:nth-child(13),
-#gigant-tabla th:nth-child(13) {
-  width: 70px;
-}
-
-#maxi-tabla td:nth-child(6),
-#maxi-tabla th:nth-child(6) {
-  width: 85px;
+table:not(#redovna-tabla) td:nth-child(6),
+table:not(#redovna-tabla) th:nth-child(6),
+table:not(#redovna-tabla) td:nth-child(7),
+table:not(#redovna-tabla) th:nth-child(7),
+table:not(#redovna-tabla) td:nth-child(10),
+table:not(#redovna-tabla) th:nth-child(10),
+table:not(#redovna-tabla) td:nth-child(13),
+table:not(#redovna-tabla) th:nth-child(13) {
+  width: 60px;
 }
 
 #redovna-tabla td:nth-child(8),
 #redovna-tabla td:nth-child(11),
 #redovna-tabla td:nth-child(14),
-#specijal td:nth-child(9),
-#specijal td:nth-child(12),
-#specijal td:nth-child(15),
-#almanah-straha td:nth-child(9),
-#almanah-straha td:nth-child(12),
-#super-book td:nth-child(9),
-#maxi td:nth-child(9),
-#maxi td:nth-child(12),
-#gigant td:nth-child(9),
-#gigant td:nth-child(12),
-#gigant td:nth-child(15) {
+table:not(#redovna-tabla) td:nth-child(9),
+table:not(#redovna-tabla) td:nth-child(12),
+table:not(#redovna-tabla) td:nth-child(15) {
   text-transform: uppercase;
 }
