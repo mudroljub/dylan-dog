@@ -276,5 +276,4 @@ document.getElementById('sacuvaj').addEventListener('click', (e) => {
   const sortirano = [...kolekcija].sort((a, b) => a.localeCompare(b)) 
   const file = new Blob([JSON.stringify(sortirano, null, 2)], {type: 'text/plain'});
   e.target.href = URL.createObjectURL(file)
-  // e.target.download = 'dilan_dog_epizode.json'
 })
