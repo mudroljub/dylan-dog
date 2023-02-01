@@ -7,17 +7,30 @@
   <title>Dylan Dog popis / Dilan Dog spisak epizoda</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="favicon.ico" />
+  <style>
+    html {
+      scroll-behavior: smooth
+    }
+
+    #arrow-up {
+      position: fixed;
+      bottom: 10px;
+      right: 20px;
+      font-size: 3em;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
-<body>
+<body id="top">
 
   <img src="dylan_dog.webp" alt="Dilan Dog logo" style="max-width: 100%;">
-  
+
   <div style="float:right; text-align: center;">
     <img src="dilan-i-grucho.jpg" alt="Dilan i Gručo" height="300" style="display: block;">
     <a href="#" role="button" download="dilan_dog_epizode.json" id="sacuvaj">Sačuvaj čekirano</a>
   </div>
-  
+
   <ul>
     <li><a href="#redovna">Redovna izdanja</a></li>
     <li><a href="#specijal">Specijal</a></li>
@@ -26,8 +39,9 @@
     <li><a href="#maxi">Maxi</a></li>
     <li><a href="#gigant">Gigant</a></li>
   </ul>
-  
-  
+
+  <a href="#top" id="arrow-up">⇧</a>
+
   <h1>Dylan Dog spisak epizoda: redovna izdanja</h1>
 
   <div id="redovna"></div>
