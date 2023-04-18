@@ -38,6 +38,13 @@ td:nth-child(3) {
   font-style: italic;
 }
 
+/* ELEMENTS */
+
+#sacuvaj {
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
 #redovna-tabla td:nth-child(5)+td:nth-child(6),
 #redovna-tabla td:nth-child(8)+td:nth-child(9),
 #redovna-tabla td:nth-child(11)+td:nth-child(12),

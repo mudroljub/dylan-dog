@@ -5,7 +5,7 @@ import almanahIzdanja from './data/almanah-straha.json' assert {type: 'json'}
 import maxiIzdanja from './data/maxi.json' assert {type: 'json'}
 import gigantIzdanja from './data/gigant.json' assert {type: 'json'}
 
-const kolekcija = new Set(JSON.parse(localStorage.getItem('kolekcija')))
+let kolekcija = new Set(JSON.parse(localStorage.getItem('kolekcija')))
 
 const redovnaZaglavlje =
   [
@@ -150,93 +150,33 @@ const gigantZaglavlje = [
   "naslov",
   "godina",
 ]
-const gigantSakrijKolone = [5,6,7,11,15,19,20,21,22,23]
+const gigantSakrijKolone = [5, 6, 7, 11, 15, 19, 20, 21, 22, 23]
 
-/* FILTER & MAP */
+/* ZAGLAVLJA */
 
 const redovnaZaglavljeHtml = redovnaZaglavlje
   .filter((x, i) => !redovnaSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
 
-const redovnaRedoviHtml = redovnaIzdanja
-  .map(red => red.filter((col, i) => !redovnaSakrijKolone.includes(i)))
-  .map(red => {
-    const id = 'redovna-' + red[0]
-    return `<tr>
-      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
-      ${red.map(td => `<td>${td || ''}</td>`).join('')}
-    </tr>`
-  }).join('')
-
 const specijalZaglavljeHtml = specijalZaglavlje
   .filter((x, i) => !specijalSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
-
-const specijalRedoviHtml = specijalIzdanja
-  .map(red => red.filter((col, i) => !specijalSakrijKolone.includes(i)))
-  .map(red => {
-    const id = 'specijal-' + red[0]
-    return `<tr>
-      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
-      ${red.map(td => `<td>${td || ''}</td>`).join('')}
-    </tr>`
-  }).join('')
 
 const superbookZaglavljeHtml = superbookZaglavlje
   .filter((x, i) => !superbookSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
 
-const superbookRedoviHtml = superbookIzdanja
-  .map(red => red.filter((col, i) => !superbookSakrijKolone.includes(i)))
-  .map(red => {
-    const id = 'super-book-' + red[0]
-    return `<tr>
-      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
-      ${red.map(td => `<td>${td || ''}</td>`).join('')}
-    </tr>`
-  }).join('')
-
 const almanahZaglavljeHtml = almanahZaglavlje
   .filter((x, i) => !almanahSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
-
-const almanahRedoviHtml = almanahIzdanja
-  .map(red => red.filter((col, i) => !almanahSakrijKolone.includes(i)))
-  .map(red => {
-    const id = 'almanah-straha-' + red[0]
-    return `<tr>
-      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
-      ${red.map(td => `<td>${td || ''}</td>`).join('')}
-    </tr>`
-  }).join('')
 
 const maxiZaglavljeHtml = maxiZaglavlje
   .filter((x, i) => !maxiSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
 
-const maxiRedoviHtml = maxiIzdanja
-  .map(red => red.filter((col, i) => !maxiSakrijKolone.includes(i)))
-  .map(red => {
-    const id = 'maxi-' + red[0]
-    return `<tr>
-      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
-      ${red.map(td => `<td>${td || ''}</td>`).join('')}
-    </tr>`
-  }).join('')
-
 const gigantZaglavljeHtml = gigantZaglavlje
   .filter((x, i) => !gigantSakrijKolone.includes(i))
   .map(th => `<th>${th}</th>`).join('')
-
-const gigantRedoviHtml = gigantIzdanja
-  .map(red => red.filter((col, i) => !gigantSakrijKolone.includes(i)))
-  .map(red => {
-    const id = 'gigant-' + red[0]
-    return `<tr>
-      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
-      ${red.map(td => `<td>${td || ''}</td>`).join('')}
-    </tr>`
-  }).join('')
 
 /* RENDER */
 
@@ -256,24 +196,104 @@ const renderTable = (id, zaglavljeHtml, redoviHtml, edicija) => {
   `
 }
 
-renderTable('redovna', redovnaZaglavljeHtml, redovnaRedoviHtml, 'Sergio Bonelli Editore')
-renderTable('specijal', specijalZaglavljeHtml, specijalRedoviHtml, 'Speciale')
-renderTable('super-book', superbookZaglavljeHtml, superbookRedoviHtml, 'Super Book')
-renderTable('almanah-straha', almanahZaglavljeHtml, almanahRedoviHtml, 'Almanacco della Paura')
-renderTable('maxi', maxiZaglavljeHtml, maxiRedoviHtml, 'Maxi')
-renderTable('gigant', gigantZaglavljeHtml, gigantRedoviHtml, 'Gigante')
+const renderTables = () => {
+  const redovnaRedoviHtml = redovnaIzdanja
+    .map(red => red.filter((col, i) => !redovnaSakrijKolone.includes(i)))
+    .map(red => {
+      const id = 'redovna-' + red[0]
+      return `<tr>
+      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
+      ${red.map(td => `<td>${td || ''}</td>`).join('')}
+    </tr>`
+    }).join('')
+
+  const specijalRedoviHtml = specijalIzdanja
+    .map(red => red.filter((col, i) => !specijalSakrijKolone.includes(i)))
+    .map(red => {
+      const id = 'specijal-' + red[0]
+      return `<tr>
+      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
+      ${red.map(td => `<td>${td || ''}</td>`).join('')}
+    </tr>`
+    }).join('')
+
+  const superbookRedoviHtml = superbookIzdanja
+    .map(red => red.filter((col, i) => !superbookSakrijKolone.includes(i)))
+    .map(red => {
+      const id = 'super-book-' + red[0]
+      return `<tr>
+      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
+      ${red.map(td => `<td>${td || ''}</td>`).join('')}
+    </tr>`
+    }).join('')
+
+  const almanahRedoviHtml = almanahIzdanja
+    .map(red => red.filter((col, i) => !almanahSakrijKolone.includes(i)))
+    .map(red => {
+      const id = 'almanah-straha-' + red[0]
+      return `<tr>
+      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
+      ${red.map(td => `<td>${td || ''}</td>`).join('')}
+    </tr>`
+    }).join('')
+
+  const maxiRedoviHtml = maxiIzdanja
+    .map(red => red.filter((col, i) => !maxiSakrijKolone.includes(i)))
+    .map(red => {
+      const id = 'maxi-' + red[0]
+      return `<tr>
+      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
+      ${red.map(td => `<td>${td || ''}</td>`).join('')}
+    </tr>`
+    }).join('')
+
+  const gigantRedoviHtml = gigantIzdanja
+    .map(red => red.filter((col, i) => !gigantSakrijKolone.includes(i)))
+    .map(red => {
+      const id = 'gigant-' + red[0]
+      return `<tr>
+      <td><input type="checkbox" name="${id}" ${kolekcija.has(id) ? 'checked' : ''} ></td>
+      ${red.map(td => `<td>${td || ''}</td>`).join('')}
+    </tr>`
+    }).join('')
+
+  renderTable('redovna', redovnaZaglavljeHtml, redovnaRedoviHtml, 'Sergio Bonelli Editore')
+  renderTable('specijal', specijalZaglavljeHtml, specijalRedoviHtml, 'Speciale')
+  renderTable('super-book', superbookZaglavljeHtml, superbookRedoviHtml, 'Super Book')
+  renderTable('almanah-straha', almanahZaglavljeHtml, almanahRedoviHtml, 'Almanacco della Paura')
+  renderTable('maxi', maxiZaglavljeHtml, maxiRedoviHtml, 'Maxi')
+  renderTable('gigant', gigantZaglavljeHtml, gigantRedoviHtml, 'Gigante')
+}
+
+renderTables()
 
 /* EVENTS */
 
 document.body.addEventListener('click', ({ target }) => {
   if (!target instanceof HTMLInputElement || !target.name) return
+
   if (target.checked) kolekcija.add(target.name)
   else kolekcija.delete(target.name)
+
   localStorage.setItem('kolekcija', JSON.stringify([...kolekcija]))
 })
 
 document.getElementById('sacuvaj').addEventListener('click', (e) => {
-  const sortirano = [...kolekcija].sort((a, b) => a.localeCompare(b)) 
-  const file = new Blob([JSON.stringify(sortirano, null, 2)], {type: 'text/plain'});
+  const sortirano = [...kolekcija].sort((a, b) => a.localeCompare(b))
+  const file = new Blob([JSON.stringify(sortirano, null, 2)], { type: 'text/plain' });
   e.target.href = URL.createObjectURL(file)
+})
+
+const inputElement = document.getElementById('upload')
+
+inputElement.addEventListener('change', (e) => {
+  if (!inputElement.files?.[0]) return
+
+  const reader = new FileReader()
+  reader.onload = (e) => {
+    kolekcija = new Set(JSON.parse(e.target.result))
+    localStorage.setItem('kolekcija', JSON.stringify([...kolekcija]))
+    renderTables()
+  }
+  reader.readAsText(inputElement.files[0])
 })
