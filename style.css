@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth
+}
+
 input[type=checkbox] {
   width: 100%;
   height: 20px;
@@ -39,6 +43,15 @@ td:nth-child(3) {
 }
 
 /* ELEMENTS */
+
+#arrow-up {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  font-size: 3em;
+  text-decoration: none;
+  z-index: 9;
+}
 
 #sacuvaj {
   margin-bottom: 4px;
