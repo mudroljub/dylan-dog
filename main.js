@@ -1,9 +1,9 @@
-import redovnaIzdanja from './data/redovna.json' assert {type: 'json'}
-import specijalIzdanja from './data/specijali.json' assert {type: 'json'}
-import superbookIzdanja from './data/super-book.json' assert {type: 'json'}
-import almanahIzdanja from './data/almanah-straha.json' assert {type: 'json'}
-import maxiIzdanja from './data/maxi.json' assert {type: 'json'}
-import gigantIzdanja from './data/gigant.json' assert {type: 'json'}
+import redovnaIzdanja from './data/redovna.json' with {type: 'json'}
+import specijalIzdanja from './data/specijali.json' with {type: 'json'}
+import superbookIzdanja from './data/super-book.json' with {type: 'json'}
+import almanahIzdanja from './data/almanah-straha.json' with {type: 'json'}
+import maxiIzdanja from './data/maxi.json' with {type: 'json'}
+import gigantIzdanja from './data/gigant.json' with {type: 'json'}
 
 let kolekcija = new Set(JSON.parse(localStorage.getItem('kolekcija')))
 
