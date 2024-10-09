@@ -1,4 +1,4 @@
-[
+export default [
   [
     1,
     "Il Club dell'Orrore",

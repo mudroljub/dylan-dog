@@ -1,9 +1,9 @@
-import redovnaIzdanja from './data/redovna.json' with {type: 'json'}
-import specijalIzdanja from './data/specijali.json' with {type: 'json'}
-import superbookIzdanja from './data/super-book.json' with {type: 'json'}
-import almanahIzdanja from './data/almanah-straha.json' with {type: 'json'}
-import maxiIzdanja from './data/maxi.json' with {type: 'json'}
-import gigantIzdanja from './data/gigant.json' with {type: 'json'}
+import redovnaIzdanja from './data/redovna.js'
+import specijalIzdanja from './data/specijali.js'
+import superbookIzdanja from './data/super-book.js'
+import almanahIzdanja from './data/almanah-straha.js'
+import maxiIzdanja from './data/maxi.js'
+import gigantIzdanja from './data/gigant.js'
 
 let kolekcija = new Set(JSON.parse(localStorage.getItem('kolekcija')))
 

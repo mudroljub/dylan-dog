@@ -1,4 +1,4 @@
-[
+export default [
   [
       1,
       "Dopo il grande Splendore",

@@ -1,4 +1,4 @@
-[
+export default [
   [
     1,
     "L'alba dei morti viventi",

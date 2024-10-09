@@ -1,4 +1,4 @@
-[
+export default [
   [
     1,
     "Il fiore d'ombra",
